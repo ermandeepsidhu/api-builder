@@ -1,20 +1,21 @@
 {
-  "name": "@yaakapp/api",
-  "version": "0.7.0",
+  "name": "@apiforge/api",
+  "version": "1.0.0",
+  "displayName": "APIForge Plugin API",
+  "description": "TypeScript types for building APIForge plugins",
   "keywords": [
+    "api-builder",
     "api-client",
-    "insomnia-alternative",
-    "bruno-alternative",
-    "postman-alternative"
+    "api-development"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mountain-loop/yaak"
+    "url": "https://github.com/yourusername/apiforge"
   },
   "bugs": {
-    "url": "https://feedback.yaak.app"
+    "url": "https://github.com/yourusername/apiforge/issues"
   },
-  "homepage": "https://yaak.app",
+  "homepage": "https://github.com/yourusername/apiforge",
   "main": "lib/index.js",
   "typings": "./lib/index.d.ts",
   "files": [
@@ -22,11 +23,7 @@
   ],
   "scripts": {
     "bootstrap": "npm run build",
-    "build": "run-s build:copy-types build:tsc",
-    "build:tsc": "tsc",
-    "build:copy-types": "run-p build:copy-types:*",
-    "build:copy-types:root": "cpy --flat ../../src-tauri/yaak-plugins/bindings/*.ts ./src/bindings",
-    "build:copy-types:next": "cpy --flat ../../src-tauri/yaak-plugins/bindings/serde_json/*.ts ./src/bindings/serde_json",
+    "build": "tsc",
     "publish": "npm publish",
     "prepublishOnly": "npm run build"
   },

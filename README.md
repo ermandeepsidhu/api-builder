@@ -1,70 +1,269 @@
+# APIForge
+
 <p align="center">
-  <a href="https://github.com/JamesIves/github-sponsors-readme-action">
-    <img width="200px" src="https://github.com/mountain-loop/yaak/raw/main/src-tauri/icons/icon.png">
-  </a>
+  <img width="200px" src="./assets/logo.png" alt="APIForge Logo">
 </p>
 
 <h1 align="center">
-  💫 Yaak ➟ Desktop API Client 💫
+  ⚡ APIForge - AI-Powered API Builder ⚡
 </h1>
 
 <p align="center">
-    A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC – built with Tauri, Rust, and React.
+    A web-based platform for designing, testing, and deploying APIs using natural language and AI assistance.
 </p>
-<p align="center">
- Development is funded by community-purchased <a href="https://yaak.app/pricing">licenses</a>. You can also <a href="https://github.com/sponsors/gschier">become a sponsor</a> to have your logo appear below. 💖
-</p>
-<br>
-
-
 
 <p align="center">
-  <!-- sponsors-premium --><a href="https://github.com/MVST-Solutions"><img src="https:&#x2F;&#x2F;github.com&#x2F;MVST-Solutions.png" width="80px" alt="User avatar: MVST-Solutions" /></a>&nbsp;&nbsp;<a href="https://github.com/dharsanb"><img src="https:&#x2F;&#x2F;github.com&#x2F;dharsanb.png" width="80px" alt="User avatar: dharsanb" /></a>&nbsp;&nbsp;<a href="https://github.com/railwayapp"><img src="https:&#x2F;&#x2F;github.com&#x2F;railwayapp.png" width="80px" alt="User avatar: railwayapp" /></a>&nbsp;&nbsp;<a href="https://github.com/caseyamcl"><img src="https:&#x2F;&#x2F;github.com&#x2F;caseyamcl.png" width="80px" alt="User avatar: caseyamcl" /></a>&nbsp;&nbsp;<a href="https://github.com/andriyor"><img src="https:&#x2F;&#x2F;github.com&#x2F;andriyor.png" width="80px" alt="User avatar: andriyor" /></a>&nbsp;&nbsp;<a href="https://github.com/"><img src="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;JamesIves&#x2F;github-sponsors-readme-action&#x2F;dev&#x2F;.github&#x2F;assets&#x2F;placeholder.png" width="80px" alt="User avatar: " /></a>&nbsp;&nbsp;<!-- sponsors-premium -->
+  <strong>Built for developers, startups, and enterprises who want to move fast.</strong>
 </p>
+
+---
+
+## 🚀 What is APIForge?
+
+APIForge is a modern web-based API development platform that combines the power of traditional API clients with AI-driven automation. Design, test, and deploy APIs using natural language, with intelligent code generation, automated testing, and deployment assistance.
+
+### Key Features
+
+#### 🤖 AI-Powered Development
+- **Natural Language API Design**: Describe your API in plain English, get OpenAPI specs
+- **Intelligent Code Generation**: Generate API implementations in Node.js, Python, Go, and more
+- **Automated Test Creation**: AI generates comprehensive test suites from your API specs
+- **Smart Error Analysis**: Get instant debugging suggestions and fixes
+- **Documentation Generator**: Auto-generate beautiful API documentation
+
+#### 🌐 Universal API Support
+- **REST APIs**: Full HTTP client with advanced features
+- **GraphQL**: Query builder and introspection
+- **gRPC**: Built-in reflection and streaming support
+- **WebSocket**: Real-time connection testing
+- **Server-Sent Events (SSE)**: Event stream monitoring
+
+#### 🔐 Enterprise-Ready Security
+- **OAuth 2.0, JWT, Basic Auth**: Built-in authentication methods
+- **Custom Auth Plugins**: Extend with your own authentication
+- **Encrypted Secrets**: Secure storage for sensitive values
+- **Environment Variables**: Separate dev, staging, and production configs
+
+#### 🧩 Extensible Plugin System
+- **Template Functions**: Insert dynamic values (UUIDs, timestamps, etc.)
+- **Authentication Plugins**: Custom auth methods
+- **Importers**: Import from Postman, Insomnia, OpenAPI, Curl
+- **Filters**: JSONPath and XPath for response inspection
+- **Custom Plugins**: Build your own extensions
+
+#### ☁️ Cloud-Native & Collaborative
+- **Team Workspaces**: Collaborate with your team in real-time
+- **Version Control**: Git-based workspace syncing
+- **Cloud Deployment**: One-click deployment to AWS, Vercel, Railway, and more
+- **Scheduled Requests**: Monitoring and automated testing
+- **Webhook Support**: Integrate with your CI/CD pipeline
+
+---
+
+## 🎯 Use Cases
+
+### For Startups
+- Rapidly prototype and iterate on API designs
+- Generate production-ready code from specifications
+- Automated testing reduces QA time
+- Deploy to cloud providers with minimal configuration
+
+### For Enterprises
+- Standardize API development across teams
+- Enforce security and compliance policies
+- Audit trails and usage analytics
+- SSO and role-based access control
+
+### For Individual Developers
+- Learn API design best practices
+- Quickly test and debug APIs
+- Build side projects faster
+- Create professional documentation
+
+---
+
+## 🏗️ Architecture
+
+APIForge is built on modern web technologies:
+
+- **Frontend**: React + TypeScript + Vite
+- **State Management**: Jotai + TanStack Query
+- **Routing**: TanStack Router
+- **Plugin System**: Node.js runtime with hot-reloading
+- **Database**: SQLite/PostgreSQL (flexible)
+- **AI Integration**: OpenAI, Anthropic Claude, or custom LLMs
+
+### Plugin Architecture
+
+The plugin system (inherited from the original Yaak codebase) allows for extensive customization:
+
+```typescript
+// Example: Custom Authentication Plugin
+export default {
+  name: 'custom-auth',
+  version: '1.0.0',
+
+  async getAuthenticationConfig(args) {
+    return {
+      inputs: [
+        { key: 'apiKey', label: 'API Key', type: 'text' },
+      ],
+    };
+  },
+
+  async authenticateRequest(args) {
+    const { apiKey } = args.inputs;
+    return {
+      headers: [
+        { name: 'X-API-Key', value: apiKey },
+      ],
+    };
+  },
+};
+```
+
+---
+
+## 🚀 Getting Started
+
+### Development
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/apiforge.git
+cd apiforge
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`
+
+### Building
+
+```bash
+# Build all packages and plugins
+npm run build
+
+# Run tests
+npm test
+
+# Lint code
+npm run lint
+```
+
+---
+
+## 🔌 Plugin Development
+
+APIForge supports custom plugins for authentication, template functions, importers, and more.
+
+```bash
+# Create a new plugin
+cd plugins
+mkdir my-custom-plugin
+cd my-custom-plugin
+
+# Initialize plugin
+npm init -y
+```
+
+See the [Plugin Development Guide](./docs/PLUGINS.md) for detailed instructions.
+
+---
+
+## 🗺️ Roadmap
+
+### Phase 1: Web Conversion (In Progress)
+- [x] Remove desktop dependencies
+- [x] Rebrand to APIForge
+- [ ] Create web-based backend API
+- [ ] Migrate database layer
+- [ ] User authentication
+
+### Phase 2: AI Integration
+- [ ] LLM service abstraction layer
+- [ ] Natural language API spec generation
+- [ ] Intelligent test generation
+- [ ] Code generation for multiple languages
+- [ ] Error analysis and suggestions
+
+### Phase 3: Cloud & Deployment
+- [ ] Cloud provider integrations (AWS, Vercel, Railway)
+- [ ] CI/CD pipeline generation
+- [ ] Automated deployment workflows
+- [ ] Monitoring and alerting
+
+### Phase 4: Collaboration
+- [ ] Real-time team workspaces
+- [ ] Comment threads and reviews
+- [ ] Version history and rollback
+- [ ] Role-based access control
+
+---
+
+## 📦 Project Structure
+
+```
+apiforge/
+├── packages/
+│   ├── common-lib/           # Shared utilities
+│   ├── plugin-runtime/       # Plugin execution engine
+│   └── plugin-runtime-types/ # TypeScript types for plugins
+├── plugins/                  # Built-in plugins
+│   ├── auth-*/              # Authentication plugins
+│   ├── importer-*/          # Import from other tools
+│   ├── template-function-*/ # Dynamic template values
+│   └── filter-*/            # Response filtering
+├── src-web/                 # React frontend
+│   ├── components/          # UI components
+│   ├── hooks/              # React hooks
+│   ├── lib/                # Utilities
+│   └── main.tsx            # Entry point
+└── scripts/                # Build and utility scripts
+```
+
+---
+
+## 🤝 Contributing
+
+APIForge is open source! We welcome contributions for bug fixes.
+
+**Note**: This project accepts bug fix contributions only. Feature contributions should be discussed in issues first.
+
+### Development Setup
+
+See [DEVELOPMENT.md](./DEVELOPMENT.md) for detailed setup instructions.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+**Note**: This is a fork of [Yaak](https://github.com/mountain-loop/yaak), adapted for web-based use with AI capabilities.
+
+---
+
+## 🙏 Acknowledgments
+
+- Built on the foundation of [Yaak](https://yaak.app) by Gregory Schier
+- Inspired by Postman, Insomnia, and Bruno
+- Thanks to the open-source community
+
+---
+
+## 📞 Contact & Support
+
+- **Documentation**: Coming soon
+- **Issues**: [GitHub Issues](https://github.com/yourusername/apiforge/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yourusername/apiforge/discussions)
+
+---
+
 <p align="center">
-  <!-- sponsors-base --><a href="https://github.com/seanwash"><img src="https:&#x2F;&#x2F;github.com&#x2F;seanwash.png" width="50px" alt="User avatar: seanwash" /></a>&nbsp;&nbsp;<a href="https://github.com/jerath"><img src="https:&#x2F;&#x2F;github.com&#x2F;jerath.png" width="50px" alt="User avatar: jerath" /></a>&nbsp;&nbsp;<a href="https://github.com/itsa-sh"><img src="https:&#x2F;&#x2F;github.com&#x2F;itsa-sh.png" width="50px" alt="User avatar: itsa-sh" /></a>&nbsp;&nbsp;<a href="https://github.com/dmmulroy"><img src="https:&#x2F;&#x2F;github.com&#x2F;dmmulroy.png" width="50px" alt="User avatar: dmmulroy" /></a>&nbsp;&nbsp;<a href="https://github.com/timcole"><img src="https:&#x2F;&#x2F;github.com&#x2F;timcole.png" width="50px" alt="User avatar: timcole" /></a>&nbsp;&nbsp;<a href="https://github.com/VLZH"><img src="https:&#x2F;&#x2F;github.com&#x2F;VLZH.png" width="50px" alt="User avatar: VLZH" /></a>&nbsp;&nbsp;<a href="https://github.com/terasaka2k"><img src="https:&#x2F;&#x2F;github.com&#x2F;terasaka2k.png" width="50px" alt="User avatar: terasaka2k" /></a>&nbsp;&nbsp;<a href="https://github.com/majudhu"><img src="https:&#x2F;&#x2F;github.com&#x2F;majudhu.png" width="50px" alt="User avatar: majudhu" /></a>&nbsp;&nbsp;<a href="https://github.com/axelrindle"><img src="https:&#x2F;&#x2F;github.com&#x2F;axelrindle.png" width="50px" alt="User avatar: axelrindle" /></a>&nbsp;&nbsp;<a href="https://github.com/jirizverina"><img src="https:&#x2F;&#x2F;github.com&#x2F;jirizverina.png" width="50px" alt="User avatar: jirizverina" /></a>&nbsp;&nbsp;<a href="https://github.com/chip-well"><img src="https:&#x2F;&#x2F;github.com&#x2F;chip-well.png" width="50px" alt="User avatar: chip-well" /></a>&nbsp;&nbsp;<!-- sponsors-base -->
+  <strong>⚡ Build APIs at the speed of thought ⚡</strong>
 </p>
-
-![Yaak API Client](https://yaak.app/static/screenshot.png)
-
-
-## Features
-
-Yaak is an offline-first API client designed to stay out of your way while giving you everything you need when you need it. 
-Built with [Tauri](https://tauri.app), Rust, and React, it’s fast, lightweight, and private. No telemetry, no VC funding, and no cloud lock-in.  
-
-
-### 🌐 Work with any API
-
-- Import collections from Postman, Insomnia, OpenAPI, Swagger, or Curl.
-- Send requests via REST, GraphQL, gRPC, WebSocket, or Server-Sent Events.
-- Filter and inspect responses with JSONPath or XPath.
-
-### 🔐 Stay secure
-- Use OAuth 2.0, JWT, Basic Auth, or custom plugins for authentication.
-- Secure sensitive values with encrypted secrets. 
-- Store secrets in your OS keychain.
-
-### ☁️ Organize & collaborate
-- Group requests into workspaces and nested folders.
-- Use environment variables to switch between dev, staging, and prod.
-- Mirror workspaces to your filesystem for versioning in Git or syncing with Dropbox.
-
-### 🧩 Extend & customize
-- Insert dynamic values like UUIDs or timestamps with template tags.
-- Pick from built-in themes or build your own.
-- Create plugins to extend authentication, template tags, or the UI.
-
-
-## Contribution Policy
-
-Yaak is open source but only accepting contributions for bug fixes. To get started, 
-visit [`DEVELOPMENT.md`](DEVELOPMENT.md) for tips on setting up your environment.
-
-## Useful Resources
-
-- [Feedback and Bug Reports](https://feedback.yaak.app)
-- [Documentation](https://feedback.yaak.app/help)
-- [Yaak vs Postman](https://yaak.app/alternatives/postman)
-- [Yaak vs Bruno](https://yaak.app/alternatives/bruno)
-- [Yaak vs Insomnia](https://yaak.app/alternatives/insomnia)

@@ -1,10 +1,10 @@
 {
-  "name": "@yaak/template-function-timestamp",
+  "name": "@apiforge/template-function-timestamp",
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "build": "yaakcli build",
-    "dev": "yaakcli dev",
+    "build": "apiforgecli build",
+    "dev": "apiforgecli dev",
     "lint": "tsc --noEmit && eslint . --ext .ts,.tsx",
     "test": "vitest --run tests"
   },

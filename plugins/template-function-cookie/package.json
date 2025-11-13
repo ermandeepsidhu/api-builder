@@ -1,12 +1,12 @@
 {
-  "name": "@yaak/template-function-cookie",
+  "name": "@apiforge/template-function-cookie",
   "displayName": "Cookie Template Functions",
   "description": "Template functions for working with cookies",
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "build": "yaakcli build",
-    "dev": "yaakcli dev",
+    "build": "apiforgecli build",
+    "dev": "apiforgecli dev",
     "lint":"tsc --noEmit && eslint . --ext .ts,.tsx"
   }
 }

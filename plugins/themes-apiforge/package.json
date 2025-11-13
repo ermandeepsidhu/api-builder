@@ -1,7 +1,7 @@
 {
-  "name": "@apiforge/template-function-fs",
-  "displayName": "File System Template Functions",
-  "description": "Template functions for working with the file system",
+  "name": "@apiforge/themes-yaak",
+  "displayName": "Yaak Themes",
+  "description": "Default themes for Yaak",
   "private": true,
   "version": "0.1.0",
   "scripts": {

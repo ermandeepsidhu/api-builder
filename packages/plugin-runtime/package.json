@@ -1,9 +1,10 @@
 {
-  "name": "@yaakapp-internal/plugin-runtime",
+  "name": "@apiforge-internal/plugin-runtime",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "bootstrap": "npm run build",
-    "build": "run-p build:*",
-    "build:main": "esbuild src/index.ts --bundle --platform=node --outfile=../../src-tauri/vendored/plugin-runtime/index.cjs"
+    "build": "esbuild src/index.ts --bundle --platform=node --outfile=./dist/index.cjs"
   },
   "dependencies": {
     "ws": "^8.18.0"

@@ -1,17 +1,17 @@
 {
-  "name": "@yaak/filter-jsonpath",
+  "name": "@apiforge/filter-jsonpath",
   "displayName": "JSONPath Filter",
   "description": "Filter JSON response data using JSONPath expressions",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mountain-loop/yaak.git",
+    "url": "https://github.com/yourusername/apiforge.git",
     "directory": "plugins/filter-jsonpath"
   },
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "build": "yaakcli build",
-    "dev": "yaakcli dev",
+    "build": "apiforgecli build",
+    "dev": "apiforgecli dev",
     "lint":"tsc --noEmit && eslint . --ext .ts,.tsx"
   },
   "dependencies": {

@@ -1,17 +1,17 @@
 {
-  "name": "@yaak/auth-apikey",
+  "name": "@apiforge/auth-apikey",
   "displayName": "API Key Authentication",
   "description": "Authenticate requests using an API key",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mountain-loop/yaak.git",
+    "url": "https://github.com/yourusername/apiforge.git",
     "directory": "plugins/auth-apikey"
   },
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "build": "yaakcli build",
-    "dev": "yaakcli dev",
+    "build": "apiforgecli build",
+    "dev": "apiforgecli dev",
     "lint":"tsc --noEmit && eslint . --ext .ts,.tsx"
   }
 }

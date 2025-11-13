@@ -1,12 +1,12 @@
 {
-  "name": "@yaak/importer-curl",
+  "name": "@apiforge/importer-curl",
   "displayName": "cURL Importer",
   "description": "Import requests from cURL commands",
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "build": "yaakcli build",
-    "dev": "yaakcli dev",
+    "build": "apiforgecli build",
+    "dev": "apiforgecli dev",
     "lint": "tsc --noEmit && eslint . --ext .ts,.tsx",
     "test": "vitest --run tests"
   },

@@ -1,12 +1,12 @@
 {
-  "name": "@yaak/importer-insomnia",
+  "name": "@apiforge/importer-insomnia",
   "displayName": "Insomnia Importer",
   "description": "Import data from Insomnia",
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "build": "yaakcli build",
-    "dev": "yaakcli dev",
+    "build": "apiforgecli build",
+    "dev": "apiforgecli dev",
     "lint":"tsc --noEmit && eslint . --ext .ts,.tsx",
     "test": "vitest --run tests"
   },
